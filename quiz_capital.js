@@ -7,7 +7,8 @@ const reponses4 = document.querySelectorAll(".response4");
 const reponses5 = document.querySelectorAll(".response5");
 const reponses6 = document.querySelectorAll(".response6");
 const cptr = document.querySelector(".cptr");
-let compteur = 1;
+const score = document.querySelector(".score");
+let compteur = 0;
 let son = () => {
   let ring = new Audio();
   ring.src = "bravo.mp3";
@@ -50,7 +51,7 @@ reponses2.forEach((laReponse) => {
   laReponse.addEventListener("click", () => {
     laReponse.style.background = "green";
     son();
-    cptr.innerHTML = compteur++;
+    cptr.innerHTML = ++compteur;
     btn2.forEach((btnTwo) => {
       btnTwo.disabled = "true";
     });
@@ -72,7 +73,7 @@ reponses3.forEach((laReponse) => {
   laReponse.addEventListener("click", () => {
     laReponse.style.background = "green";
     son();
-    cptr.innerHTML = compteur++;
+    cptr.innerHTML = ++compteur;
     btn3.forEach((btnTwo) => {
       btnTwo.disabled = "true";
     });
@@ -94,7 +95,7 @@ reponses4.forEach((laReponse) => {
   laReponse.addEventListener("click", () => {
     laReponse.style.background = "green";
     son();
-    cptr.innerHTML = compteur++;
+    cptr.innerHTML = ++compteur;
     btn4.forEach((btnTwo) => {
       btnTwo.disabled = "true";
     });
@@ -116,7 +117,7 @@ reponses5.forEach((laReponse) => {
   laReponse.addEventListener("click", () => {
     laReponse.style.background = "green";
     son();
-    cptr.innerHTML = compteur++;
+    cptr.innerHTML = ++compteur;
     btn5.forEach((btnTwo) => {
       btnTwo.disabled = "true";
     });
@@ -138,9 +139,13 @@ reponses6.forEach((laReponse) => {
   laReponse.addEventListener("click", () => {
     laReponse.style.background = "green";
     son();
-    cptr.innerHTML = compteur++;
+    cptr.innerHTML = ++compteur;
     btn6.forEach((btnTwo) => {
       btnTwo.disabled = "true";
     });
   });
+});
+cptr.addEventListener("click", () => {
+  score.innerHTML = "Votres scores est de : " + compteur;
+  score.style.fontSize = "1.5rem";
 });
